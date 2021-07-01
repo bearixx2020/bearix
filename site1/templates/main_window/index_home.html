@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bearix</title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/swc0ext.css">
+    
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" >
+ 
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="/">
+                <img id="navLogo" src="{%static 'img\logo.png' %}" alt="logo_naw" height="40%" width="40%">
+                </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div  class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" >
+                  <li class="nav-item"  >
+                    <a class="nav-link" href="{% url 'example' %}" style="color :white; font-size:1.1em;">Справка</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#comand" style="color :white; font-size:1.1em;">Кабинет</a>
+                  </li>
+                  <li class="nav-item"> {% load static %}
+                    <a class="nav-link" href="#" style="color :white; font-size:1.1em;">Решения</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" href="#kont" style="color :white; font-size:1.1em;">Контакты</a>
+                  </li>
+                  
+                </ul>
+              </div>
+          </div>
+      </nav>
+
+      <div style="position:relative">
+        
+      <img id="layout1" src="{%static 'img\layout2.png' %}" alt="layout2" width="100%" style="position:absolute ; height: 800px; ">
+      <h2 style="position:absolute; padding-top: 280px; padding-left: 10.54%;"> ВИБРАЦИОННЫЕ ПРОВЕРКИ  </h2>
+      <h2 style=" position:absolute; padding-top: 320px; padding-left: 10.54%;">ПОДШИПНИКОВ КАЧЕНИЯ</h2>
+      <hr color="white" style="position:absolute;margin-top: 390px; margin-left: 10.54%;  " width="150px" size="5px"      >
+      <img src="{%static 'img\logo2.png' %}"  alt="layout2"  class="SecLogo" >
+     <h3 id="lble1"  >Загрузите csv файл с вибрациями вашего подшиника
+   и получите возможность проверить его абсолютно бесплатно  </h3>
+    <a href="{% url 'upload' %}"><button  class="btn white" style="position:absolute; margin-top: 510px; margin-left: 10.54%;">Проверить</button></a>
+    </div>
+
+    
+
+<div style="margin-top: 0px;" >
+  <hr  style="margin-top: 800px;color: grey; background-color: grey;" width="100%" size="5px">
+  <div style="width: 100%;" class="row">
+    <div class="col-md "  >
+    <h4  style="font-size: 2em; color: black; margin-left : 10.54%;">Social Media</h4>
+    <h3  style="margin-left : 10.54%;">Подписывайтесь на нас и следите за развитем <br> стартапа</h3>
+    </div>
+
+<div id="MediaC" class="col-md " style="margin-left: 25%;">
+     
+<img id="inst" class="icon "  style="height: 60px; width: 60px;" src="{%static 'img\insta.png' %}" alt="Media">
+<img id="face" class="icon"  style="height: 60px; width: 60px;" src="{%static 'img\Facebook.png' %}" alt="Media">
+<img id="google" class="icon" style="height: 60px; width: 60px;" src="{%static 'img\google.png' %}" alt="Media">
+<a href="https://www.youtube.com/channel/UC9u_jKBUbP6YS1Deadn8Mkg"><img id="pintrest"  class="icon"  style="height: 40px; width: 60px;" src="{%static 'img\pintrest.png' %}" alt="Media"></a>
+<img id="twtr" class="icon" style="height: 60px; width: 60px;" src="{%static 'img\Twitter.png' %}" alt="Media">
+    
+</div>
+</div>
+</div>
+
+
+<hr  style="margin-bottom: 0%; color: grey; background-color: grey;" width="100%" size="5px">
+
+<div style="background-color: #f5f5f5;  width:100%;">
+  <div class="container">
+  <div class="row" >
+    <div class="col-4 col-lg-3" >
+     
+      <table id="tableBtn" class="table1">
+        <tr><td id ="FStep" class="active cell">ЭТАП 1</td></tr>
+        <tr><td id ="SecStep" class="cell">ЭТАП 2</td></tr>
+        <tr><td id ="ThirdStep" class="cell">ЭТАП 3</td></tr>
+      </table>
+
+    </div>
+    <div class="col-8 col-lg-6"  >
+      <h4 id="Title1S"style="margin-top: 50px; margin-left: 20px; width:100%">Стадии развития стартапа :</h4>
+      <h5 id="StageInfo" style="margin-top: 50px; margin-left: 20px; width:40%;">Создание веб приложения для лёгкого взаимодействия с пользователями. Сбор датасета. Анализ закономерностьей воникающих в испорченных подшипниках</h5>
+        <h5 style=" margin-left: 20px;margin-top: 40px; width:50%;" id="StageTime">
+          Время выполнения 1 месяц
+        </h5>
+    </div>
+    <div class="col-sm-0 col-lg-3" >
+      <img class="img_bearing" src="{%static 'img\bearing.png' %}" >
+    </div>
+  </div>
+  </div>
+</div>
+
+  <hr  style="color: grey; margin-top: 0px; background-color: grey;" width="100%" size="5px">
+
+  <div class="container">
+    <div class="row" >
+      <div class="col-sm col-lg-6" >
+        <h4 class="Stend">Испытательный стенд</h4> 
+        <hr  id="hrStend" style="margin-bottom: 0%;margin-top: 30px; color: #ff8b38; background-color: #ff8b38;margin-left: 100px;" width="15%" size="5px"></hr>
+        <h5 class="StendInfo" style=" margin-bottom: 40px;">Испытательный стенд состоит из двигателя постоянного тока. На вал ДПТ с помощью втулки крепиться подшипник. Скорость вращения вала регулируеться с помощью широтно-импульсной модуляции. 
+          В непосредственной близости к подшипнику размещено  два акселерометра, которые записывают вибрации происходящие в подшипнике. </h5>
+      <a class="detailes"  >Подробнее</a>
+        </div>
+      <div class="col-sm-0 col-lg-6" >
+        <img class="imgEngine" src="{%static 'img\engine.jpg' %}" width="60%" height="90%"></img>
+      </div>
+    </div>
+  </div>
+
+  
+  <hr  style="color: grey; margin-top: 100px; background-color: grey; margin-bottom: 0%;" width="100%" size="5px">
+  <div style="background-color: #f5f5f5;  width:100%;">
+  
+ 
+  <div class="container" style="margin-bottom: 50px;">
+    <div class="row" >
+      <div class="col-md col-lg-4 " > <img class="iconP" src="{%static 'img\THINK.png' %}" alt="">
+        <div class="text_need">
+          <h4 class="title_need">Глубокий анализ</h4> 
+          Мы предоставляем услугу глубокого анализа причин выхода из строя подшипника качения. Проведя такой анализ вы сможете устранить причину выхода из строя вашего подшипника.</div></div>
+      <div class="col-md col-lg-4 " ><img class="iconP" src="{%static 'img\keyboard.png' %}" alt="">
+        <div class="text_need">
+          <h4 class="title_need">Автоматизация</h4> 
+          Мы даем возможность автоматизировать процесс проверки подшипников, что приводит к сокращению количества ошибок от человеческого фактора</div></div>
+      <div class="col-md col-lg-4 " ><img class="iconP" src="{%static 'img\speed.png' %}" alt="">
+        <div class="text_need">  
+          <h4 class="title_need">Эффективность</h4> 
+          Такой подход к проверке подшипников приводит к сокращению затрат времени на проведение таких операций в среднем на 50%.</div></div>
+    </div>
+  </div>
+
+<hr  style="color: grey; margin-top: 0px; background-color: grey; margin-bottom: 0%;" width="100%" size="5px">
+</div> 
+<div>
+<h6  style="text-align: center; padding-top: 60px;font-size: 24pt; ">Наша команда : </h6>
+<div  style="margin-left:0px; margin-top: 100px; height: 430px;  display: flex; justify-content: center">
+  <img  src="{%static 'img\Team_for_min.jpg' %}" class="my_area_min" >
+  
+<a href="#"><img src="{%static 'img\4.png' %}" class="my_area"  alt="1"> </a>
+  <a href="#"> <img src="{% static 'img\5.png' %}" class="my_area" alt="2"> </a>
+    <a href="#"> <img src="{%static 'img\6.png' %}" class="my_area" alt="3"> </a>
+     <a href="#"> <img src="{%static 'img\7.png' %}" class="my_area" alt="4"> </a>
+       <a href="https://web.kpi.kharkov.ua/dpm/ru/vodka-aleksej-aleksandrovich/"><img src="{%static 'img\8.png' %}" class="my_area" alt="5"> </a>
+           <a href="#"><img src="{%static 'img\9.png' %}" class="my_area" alt="6"> </a>
+</div>
+</div>
+<hr  style="color: grey; margin-top: 0px; background-color: grey; margin-bottom: 0%;" width="100%" size="5px">
+<h6  style="text-align: center; padding-top: 60px; margin-bottom: 30px; font-size: 24pt; ">Свяжитесь с нами </h6>
+<hr  style="color: #ff8b38; margin: auto; background-color: #ff8b38; margin-bottom: 40px;" width="15%" size="5px">
+
+<form  action="." method="post" id="form">
+  {% csrf_token %}
+<div class="container">
+  <div class="row" >
+   
+    <div class="col-sm col-lg-6" >
+      <div class="row" >  <input class="textarea" placeholder="Имя " type="text" id='Email' > </div>
+      <div class="row" > <input class="textarea" placeholder="Фамилия " type="text" id='Email'  > </div>
+      <div class="row" > <input class="textarea" placeholder="Email " type="Email" id='Email' > </div>
+    </div>
+    <div class="col-sm col-lg-6" >
+      <br> <br>
+      <input  placeholder="Сообщение " class="textarea1" id="Letter" type="text" >
+    </div>
+
+  </div>
+</div>
+<input style="background-color: #ff8b38; width: 200px;display: block;margin-bottom: 50px; margin-top: 70px; margin-left: auto; margin-right: auto;" type="submit"  class="btn btn-success"></button>
+</form>
+{% load static %}
+
+<script src="{% static 'javascript\script.js' %}"></script>
+</body>
+</html>

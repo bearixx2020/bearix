@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    {% load static %}
+    <script src="{% static 'javascript\d3.min.js' %}"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+        h1{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  display: block;
+  font-family: Montserrat;
+  font-size:2.1vw;
+  color: #000033;
+  
+}
+
+    </style>
+    <link href="{%static 'css\style.css' %}" rel="stylesheet" >
+    <link href="{%static 'css\style2.css' %}" rel="stylesheet" >
+     <link href="{%static 'css\cstyle3.css' %}" rel="stylesheet" >
+</head>
+<body >
+  
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="/">
+        <img id="navLogo" src="{%static 'img\logo.png' %}" alt="logo_naw" height="40%" width="40%">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div  class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" >
+              <li class="nav-item"  >
+                <a class="nav-link" href="{% url 'example' %}" style="color :white; font-size:1.1em;">Справка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#comand" style="color :white; font-size:1.1em;">Кабинет</a>
+              </li>
+              <li class="nav-item">
+            <a class="nav-link" href="#" style="color :white; font-size:1.1em;">Решения</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" href="#kont" style="color :white; font-size:1.1em;">Контакты</a>
+              </li>
+              
+            </ul>
+          </div>
+      </div>
+  </nav>
+
+
+
+ <div class="header">
+     <img style="position:absolute; padding-top: 90px; padding-left: 10.54%;" src="{%static 'img\analisys_icon.png' %}">
+   <h2 style="position:absolute; padding-top: 280px; padding-left: 10.54%;"> ПРИМЕРЫ АНАЛИЗА </h2>
+      <h2 style=" position:absolute; padding-top: 320px; padding-left: 10.54%;">ПОДШИПНИКОВ КАЧЕНИЯ</h2>
+      <hr color="white" style="position:absolute;margin-top: 390px; margin-left: 10.54%;" width="150px" size="5px">
+     <h3 id="lble1"  >На данной странице представлены графики колебаний для вибраций подшипников и соотвецтвующие АЧХ </h3>
+     <video  height="470" style="  margin-top: 110px; margin-left: 730px;" preload="auto" autoplay="true" loop="true" muted="muted" src="{%static 'video\intro.mp4' %}"width="500" height="300" ></video>
+     
+
+</div>
+
+
+
+<h1 style="font-size:30px; margin-left:2px;margin-top:47%;">Исправный подшипник :</h1>
+ <div  style="margin-top: 50px;margin-bottom: 4px;display: flex;justify-content: center;margin-left:14%">  
+ <div  id="my_dataviz" style="width:50%"></div>
+         <div style="width:50%" id="graph1"><img width="420px" height="400px" src ="{%static 'img\1P.png' %}"></div>
+   </div>
+   <h5 id="max1" style="margin-left:18%; margin-top:10px;">Максимальное значение :</h5>
+   <h5 id="min1" style="margin-left:18%">Минимальное значение :</h5>
+    <div style="margin-top: 50px;margin-bottom: 4px;display: flex;justify-content: center; margin-left:14%">  
+  <div style="width:50%" id="my_dataviz２"></div>
+        <div style="width:50%" id="graph2"><img width="420px" height="400px" src ="{%static 'img\2P.png' %}"></div>
+   </div>
+   <h5 id="max2" style="margin-left:18%; margin-top:10px;">Максимальное значение :</h5>
+   <h5 id="min2" style="margin-left:18%">Минимальное значение :</h5>
+    <div  style="margin-top: 50px;margin-bottom: 4px;display: flex;justify-content: center;margin-left:14%">  
+ <div style="width:50%" id="my_dataviz3"></div>
+        <div style="width:50%" id="graph3"><img width="420px" height="400px" src ="{%static 'img\3P.png' %}"></div>
+   </div>
+   <h5 id="max3" style="margin-left:18%; margin-top:10px;">Максимальное значение :</h5>
+   <h5 id="min3" style="margin-left:18%">Минимальное значение :</h5>
+   <h1 style="font-size:30px;margin-bottom: 50px;margin-top: 130px;">Испорченный подшипник :</h1>
+
+    <div style="margin-top: 50px;margin-bottom: 4px;display: flex;justify-content: center;margin-left:14%">  
+ <div style="width:50%" id="my_dataviz4"></div>
+    <div style="width:50%" id="graph4"><img width="420px" height="400px" src ="{%static 'img\4P.png' %}"></div>
+   </div>
+   <h5 id="max4" style="margin-left:18%; margin-top:10px;">Максимальное значение :</h5>
+   <h5 id="min4" style="margin-left:18%">Минимальное значение :</h5>
+    <div style="margin-top: 50px;margin-bottom: 4px;display: flex;justify-content: center;margin-left:14%">  
+ <div style="width:50%" id="my_dataviz5"></div>
+    <div style="width:50%" id="graph5"><img width="420px" height="400px" src ="{%static 'img\5P.png' %}"></div>
+   </div>
+   <h5 id="max5" style="margin-left:18%; margin-top:10px;">Максимальное значение :</h5>
+   <h5 id="min5" style="margin-left:18%">Минимальное значение :</h5>
+      
+       <div style="margin-top: 50px;margin-bottom: 4px;display: flex; justify-content: center;margin-left:14%; margin-bottom: 0px;">  
+ <div style="width:50%" id="my_dataviz6"></div>
+   <div style="width:50%" id="graph6"><img width="420px" height="400px" src ="{%static 'img\6P.png' %}"></div>
+   </div>
+   <h5 id="max6" style="margin-left:18%; margin-top:10px;">Максимальное значение :</h5>
+   <h5 id="min6" style="margin-left:18%">Минимальное значение :</h5>
+ 
+   {% load static %}
+    <script  type="text/javascript" src="{% static 'javascript\app.js' %}"></script>
+  
+  
+
+
+
+</body>
+</html>
+
+

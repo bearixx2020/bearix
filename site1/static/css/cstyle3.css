@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+  
+.for_img{
+height: 100px;
+margin-top: 30px;
+
+}
+.navbar{
+    font-family:"Raleway" ;
+    color: black;
+    font-weight: bolder;
+    
+    
+    }
+    
+    #navbarNav {
+        justify-content: flex-end;
+        
+    }
+    
+    
+    .nav-item{
+        padding-right: 20px;
+    }
+    
+    .navbar-brand{
+        padding-left: 10px;
+    }
+.IMG{
+    margin-right: 30px;
+    margin-left: 30px;
+    display: block;
+}
+.fortext{
+    text-align: justify;
+    display: block;
+    font-family: Montserrat;
+    font-size:1.2vw ;
+    color: #000033;
+}
+ h5{
+   
+    font-size: 1em;
+    color: #808080;
+    font-family:  myriad-pro, sans-serif;
+    opacity: 1;
+    
+
+ }
+.blockimgs{  
+    width: 100%;
+    object-fit: contain; 
+    height: 230px
+}
+.my_area{
+    
+    filter: brightness(50%);
+    width: 200px;
+    height: 250px;
+    clip-path: polygon(100% 0%, 78% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+.my_area:hover{
+    transform: scale(1.2);
+    filter: brightness(100%);
+}

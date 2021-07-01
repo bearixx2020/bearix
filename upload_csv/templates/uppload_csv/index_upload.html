@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Upload file</title> 
+   
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/swc0ext.css">
+
+    {% load static %}
+     
+  <link rel="stylesheet" href="{%static 'css\style2.css' %}">
+</head>
+<body >
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+  
+            <a class="navbar-brand" href="/">
+                <img id="navLogo" src="{%static 'img\logo.png' %}" alt="logo_naw" height="40%" width="40%">
+                </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+  
+              <div  class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" >
+                  <li class="nav-item"  >
+                    <a class="nav-link" href="{% url 'example' %}" style="color :white; font-size:1.1em;">Справка</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#comand" style="color :white; font-size:1.1em;">Кабинет</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  href="#" style="color :white; font-size:1.1em;">Решения</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" href="#kont" style="color :white; font-size:1.1em;">Контакты</a>
+                  </li>
+                  
+                </ul>
+              </div>
+          </div>
+      </nav>
+  
+      
+  <script src="script.js"></script>
+  
+  <div class="header">
+  <h2 style="font-size: 3vh; color: white;position:absolute; padding-top: 130px; margin-left:30%;"> Загрузите csv файл с вибрациями вашего подшиника :</h2>
+  <img class="dowload_img" src="{%static 'img\download_icon.png' %}" alt=""> 
+<form enctype="multipart/form-data" action="." method="post" id="form">
+  {% csrf_token %}
+  <input class="btnd" type="file" id="input" name="filename" style="opacity: 0;  width: 16%; height: 350px; position:absolute;margin-left:40%; margin-top: 220px;">
+</form>
+</div>
+  
+  <script>
+    document.getElementById("input").onchange = function() {
+    document.getElementById("form").submit();
+};
+    const inputElement = document.getElementById("input");
+    inputElement.addEventListener("change", handleFiles, false);
+    function handleFiles() {
+    
+    let file = inputElement.files[0];
+    console.log(file);
+    let reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = function() {
+    console.log(reader.result);
+    let arr = CSVToArray(reader.result,",");
+    arr[0][0]=0;
+    arr[0][1]=0;
+    console.log(arr[1][1]);
+  
+  
+  
+  };
+  }
+    function CSVToArray( strData, strDelimiter ){
+       
+        strDelimiter = (strDelimiter || ",");
+  
+        var objPattern = new RegExp(
+            (
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+  
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+  
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"
+            ),
+            "gi"
+            );
+  
+  
+        var arrData = [[]];
+  
+        var arrMatches = null;
+  
+        while (arrMatches = objPattern.exec( strData )){
+  
+            var strMatchedDelimiter = arrMatches[ 1 ];
+  
+            if (
+                strMatchedDelimiter.length &&
+                strMatchedDelimiter !== strDelimiter
+                ){
+  
+                arrData.push( [] );
+  
+            }
+  
+            var strMatchedValue;
+  
+            if (arrMatches[ 2 ]){
+                strMatchedValue = arrMatches[ 2 ].replace(
+                    new RegExp( "\"\"", "g" ),
+                    "\""
+                    );
+  
+            } else {
+  
+                strMatchedValue = arrMatches[ 3 ];
+  
+            }
+            arrData[ arrData.length - 1 ].push( strMatchedValue );
+        }
+  
+        return( arrData );
+    }
+  
+  
+  </script>
+  
+</body>
+</html>
+
+

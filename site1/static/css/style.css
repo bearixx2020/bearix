@@ -227,10 +227,7 @@ h6{
     -moz-appearance: none;
     text-align: center;
  }
- @media screen and (min-width: 1500px) {
-    #layout1{
-        filter: brightness(0);
-    } }
+
     @media screen and (min-width: 900px) {
           .my_area_min{
             width:0px;

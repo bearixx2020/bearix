@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'bearix_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bearix',
+        'USER': 'nikita',
+        'PASSWORD': 'y5612x834',
+        'HOST' : 'localhost',
+        'PORT' : '',
     }
 }
 
@@ -127,12 +131,11 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
-
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_HOST_USER = 'bearixx2020@gmail.com' 
 EMAIL_HOST_PASSWORD = 'SemBra123' 
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
